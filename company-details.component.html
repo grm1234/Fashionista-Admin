@@ -1,0 +1,18 @@
+<div class="card text-center">
+    <div class="card-header">
+        {{company.name}}
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">Company ID: {{company._id}}</h5>
+        <h5 class="card-title">Company Name: {{company.name}}</h5>
+    </div>
+    <form [formGroup]="companyRef" (ngSubmit)="updateCompanyDetails()">
+        <label>Edit Company Name</label><br/>
+        <input type="text" formControlName="name"/><br/><br/>
+        <input type="submit" class="btn btn-secondary"><br/>
+    </form><br/><br/>
+    <div class="card-footer text-muted">
+        <button class="btn btn-secondary" (click)="goBack()">Go Back</button> |
+        <button class="btn btn-secondary" (click)="deleteCompanyById(company._id)">Delete</button>
+    </div>
+</div>

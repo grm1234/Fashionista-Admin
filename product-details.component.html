@@ -1,0 +1,20 @@
+<div class="card text-center">
+    <div class="card-header">
+        {{product.pname}}
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">Product ID: {{product._id}}</h5>
+        <h5 class="card-title">Name: {{product.pname}}</h5>
+        <h5 class="card-title">Company: {{product.company}}</h5>
+        <h5 class="card-title">Type: {{product.type}}</h5>
+        <img src="{{product.img}}">
+        <h5 class="card-title">Description: {{product.desc}}</h5>
+        <h5 class="card-title">Price: {{product.price}}</h5>
+
+    </div>
+    <div class="card-footer text-muted">
+        <button class="btn btn-secondary" (click)="goBack()">Go Back</button> |
+        <button class="btn btn-secondary" (click)="deleteProd(product._id)">Delete</button> |
+        <button class="btn btn-secondary" [routerLink]="['/productsEdit/',product._id]">Update</button>
+    </div>
+</div>

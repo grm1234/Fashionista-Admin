@@ -1,0 +1,33 @@
+
+<body>
+<div class="container text-center" >
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>S.No.</th>
+                <th>ID</th>
+                <th>Product Type</th>
+                <th>Product Company</th>
+                <th>Product Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let p of products;let rowIndex=index">
+                <td>{{rowIndex+1}}</td>
+                <td>{{p._id}}</td>
+                <td>{{p.type}}</td>
+                <td>{{p.company}}</td>
+                <td>{{p.pname}}</td>
+                <td>
+                    <a class="btn btn-secondary" (click)="deleteProduct(p._id)">Delete</a>
+                </td>
+                <td>
+                    <a class="btn btn-secondary" [routerLink]="['/products/',p._id]">Details</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <a class="btn btn-secondary" [routerLink]="['/product-add']">Add Product</a>
+</div>
+</body>

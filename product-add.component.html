@@ -1,0 +1,31 @@
+<div class="card text-center">
+    <form [formGroup]="prodRef" (ngSubmit)="storeProd()">
+        <label>Product Id</label><br/>
+        <input type="text" formControlName="_id"/><br/>
+        ID should be one higher/lower than highest/lowest ID in table and not negative<br><br/>
+        <label for="type">Type:</label><br/>
+        <select  formControlName="type" id="type">
+            <option value="clothes">Clothes</option>
+            <option value="shoes">Shoes</option>
+            <option value="accessories">Accessories</option>
+        </select><br/> <br/>
+        <label for="company">Company:</label><br/>
+        <select  [(ngModel)]="companies" formControlName="company">
+            <option *ngFor="let comp of companies" [value]="comp.name">{{comp.name}}</option>
+        </select><br/> <br/>
+        <!--<label>Company</label><br/>
+        <input type="text" formControlName="company"/><br/><br/>-->
+        <label>Product Name</label><br/>
+        <input type="text" formControlName="pname"/><br/><br/>
+        <label>Image</label><br/>
+        <input type="text" formControlName="img"/><br/><br/>
+        <label>Description</label><br/>
+        <input type="text" formControlName="desc"/><br/><br/>
+        <label>Price</label><br/>
+        <input type="text" formControlName="price"/><br/><br/>
+        <input type="submit" class="btn btn-secondary"><br/>
+    </form><br/>
+    <div class="card-footer text-muted">
+        <button class="btn btn-secondary" (click)="goBack()">Go Back</button>
+    </div>
+</div>

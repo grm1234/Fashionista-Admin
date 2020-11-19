@@ -1,0 +1,18 @@
+<div class="card text-center">
+    <h4>*These are just placeholders, they will not be stored in the database. Please fill in all the boxes with the correct information.</h4>
+    <form [formGroup]="prodRef" (ngSubmit)="updateProd()">
+        <label>Edit Name</label><br/>
+        <input type="text" formControlName="pname" placeholder="{{product.pname}}"/><br/><br/>
+        <label>Edit Description</label><br/>
+        <input type="text" formControlName="desc" placeholder="{{product.desc}}"/><br/><br/>
+        <label>Edit Price</label><br/>
+        <input type="text" formControlName="price" placeholder="{{product.price}}"/><br/><br/>
+        <label>Change Image</label><br/>
+        <input type="text" formControlName="img" placeholder="{{product.img}}"/><br/><br/>
+        <input type="submit" class="btn btn-secondary"><br/>
+    </form><br/><br/>
+    <div class="card-footer text-muted">
+        <button class="btn btn-secondary" (click)="goBack()">Go Back</button> |
+        <button class="btn btn-secondary" (click)="deleteProd(product._id)">Delete</button>
+    </div>
+</div>
